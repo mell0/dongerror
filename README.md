@@ -9,7 +9,7 @@ Just import dongerror in your project and it will make your errors -> dongerrors
 
 ```
 
->>> import dongerror
+>>> from dongerror import dongerror
 >>> raise Exception('test exception')
 
 Traceback (most recent call last):
