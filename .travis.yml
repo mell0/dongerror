@@ -9,3 +9,10 @@ python:
   - '3.6'
   - '3.7'
 
+install:
+  - pip install tox-travis codecov
+
+script: tox
+
+after_success:
+  - sleep 10  # Github build status would not be updated by "codecov" otherwise
