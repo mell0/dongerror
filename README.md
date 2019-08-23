@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/mell0/dongerror.svg?branch=master
+.. image: https://travis-ci.org/mell0/dongerror.svg?branch=master
     :target: https://travis-ci.org/mell0/dongerror
 
 # Description
