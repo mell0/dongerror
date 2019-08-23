@@ -1,7 +1,7 @@
 import sys
-import config
 import traceback
-import sys
+
+from dongerror import config
 
 
 def donger_exception_handler(exc_type, exc_value, exc_traceback):
@@ -35,4 +35,3 @@ def donger_exception_handler(exc_type, exc_value, exc_traceback):
 
 
 sys.excepthook = donger_exception_handler
-
