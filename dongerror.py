@@ -13,8 +13,11 @@ def donger_exception_handler(exc_type, exc_value, exc_traceback):
         exc_type_name = exc.__name__
 
         if exc_type_name in config.EXCEPTION_DONGERS:
+            donger_icon = config.EXCEPTION_DONGERS[exc_type_name].decode()
             new_exception = type(
-                f"{exc_type_name} {config.EXCEPTION_DONGERS[exc_type_name].decode()}",
+                "{exc_type_name} {donger_icon}".format(
+                    exc_type_name=exc_type_name,
+                    donger_icon=donger_icon),
                 (exc_type,),
                 dict(),
             )
@@ -28,8 +31,11 @@ def donger_exception_handler(exc_type, exc_value, exc_traceback):
         exc_traceback)
 
     f[-1] = f[-1].replace(
-        f'{__name__}.{exc_type_name}',
-        exc_type_name)
+        '{mdl_name}.{exc_type_name}'.format(
+            mdl_name=__name__,
+            exc_type_name=exc_type_name),
+        '({exc_type_name})'.format(
+            exc_type_name=exc_type_name))
 
     sys.stderr.write(''.join(f))
 
