@@ -13,7 +13,8 @@ Just import dongerror in your project and it will make your errors -> dongerrors
 Example
 -------
 
-.. code::
+.. code-block::
+
    >>> from dongerror import dongerror
    >>> raise Exception('test exception')
 
